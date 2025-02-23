@@ -14,15 +14,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang='en'>
-			<body className={`${inter.className} min-h-screen bg-background`}>
-				<header className='bg-white shadow-sm'>
-					<div className='container mx-auto px-4 py-4'>
-						<Logo />
-					</div>
-				</header>
-				<main className='container mx-auto px-4 py-8 mb-16'>{children}</main>
-				<BottomNav />
+		<html lang='en' className='dark'>
+			<body className={`${inter.className} min-h-screen bg-gray-900 text-gray-100`}>
+				<div className='flex flex-col min-h-screen'>
+					<header className='bg-gray-800 shadow-md'>
+						<div className='container mx-auto px-4 py-4 flex justify-center'>
+							<Logo />
+						</div>
+					</header>
+					<main className='flex-grow container mx-auto px-4 py-8 mb-16'>{children}</main>
+					<BottomNav />
+				</div>
 			</body>
 		</html>
 	);

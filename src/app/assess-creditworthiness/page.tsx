@@ -82,6 +82,21 @@ export default function AssessCreditworthiness() {
 									))}
 								</ul>
 							</div>
+							<div>
+								<p className='text-lg font-semibold mb-2'>
+									Details of feature importance:
+								</p>
+								<ul className='list-disc list-inside space-y-1'>
+									<li>Age: 0.1418999618750523</li>
+									<li>Credit History: 0.12967561723257462</li>
+									<li>Employment: 0.07960853253924446</li>
+									<li>Loans: 0.15940090808415122</li>
+									<li>Social Media: 0.11335599729656182</li>
+									<li>Subscriptions: 0.09624013323474752</li>
+									<li>Transactions: 0.12332329450246714</li>
+									<li>Travel: 0.1564955552352009</li>
+								</ul>
+							</div>
 							<Button onClick={() => router.push('/credit-cards')} className='w-full'>
 								Return to Credit Cards
 							</Button>

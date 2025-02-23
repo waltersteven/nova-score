@@ -17,21 +17,21 @@ const creditCards = [
 		name: 'Cash Back Mastercard',
 		limit: 5000,
 		balance: 4000,
-		image: '/images/black-card.jpg',
+		image: '/images/gold-card.jpg',
 	},
-	{ id: 3, name: 'Travel Visa', limit: 7500, balance: 3000, image: '/images/gold-card.jpg' },
+	{ id: 3, name: 'Travel Visa', limit: 7500, balance: 3000, image: '/images/black-card.jpg' },
 ];
 
 export default function CreditCards() {
 	return (
 		<div className='space-y-6 animate-in'>
-			<h1 className='text-2xl font-bold'>Your Credit Cards</h1>
+			<h1 className='text-2xl font-bold text-gray-100'>Your Credit Cards</h1>
 			{creditCards.map((card) => {
 				const usagePercentage = (card.balance / card.limit) * 100;
 				const isHighUsage = usagePercentage > 70;
 
 				return (
-					<Card key={card.id} className='overflow-hidden'>
+					<Card key={card.id} className='overflow-hidden bg-gray-800 border-gray-700'>
 						<div className='relative h-48 w-full'>
 							<Image
 								src={card.image || '/placeholder.svg'}
@@ -42,17 +42,17 @@ export default function CreditCards() {
 							/>
 						</div>
 						<CardContent className='space-y-4 pt-4'>
-							<h3 className='text-xl font-semibold'>{card.name}</h3>
-							<div className='flex justify-between items-center'>
+							<h3 className='text-xl font-semibold text-gray-100'>{card.name}</h3>
+							<div className='flex justify-between items-center text-gray-300'>
 								<p>
 									Credit Limit:{' '}
-									<span className='font-semibold'>
+									<span className='font-semibold text-gray-100'>
 										${card.limit.toLocaleString()}
 									</span>
 								</p>
 								<p>
 									Balance:{' '}
-									<span className='font-semibold'>
+									<span className='font-semibold text-gray-100'>
 										${card.balance.toLocaleString()}
 									</span>
 								</p>
@@ -60,31 +60,31 @@ export default function CreditCards() {
 							<div className='relative pt-1'>
 								<div className='flex mb-2 items-center justify-between'>
 									<div>
-										<span className='text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-primary bg-primary-foreground'>
+										<span className='text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-gray-100 bg-gray-700'>
 											Credit Used
 										</span>
 									</div>
 									<div className='text-right'>
 										<span
 											className={`text-xs font-semibold inline-block ${
-												isHighUsage ? 'text-red-600' : 'text-primary'
+												isHighUsage ? 'text-red-400' : 'text-green-400'
 											}`}
 										>
 											{Math.round(usagePercentage)}%
 										</span>
 									</div>
 								</div>
-								<div className='overflow-hidden h-2 mb-4 text-xs flex rounded bg-primary-foreground'>
+								<div className='overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-700'>
 									<div
 										style={{ width: `${usagePercentage}%` }}
 										className={`shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center ${
-											isHighUsage ? 'bg-red-600' : 'bg-primary'
+											isHighUsage ? 'bg-red-500' : 'bg-green-500'
 										}`}
 									></div>
 								</div>
 							</div>
 							<Link href={{ pathname: '/credit-line', query: { cardId: card.id } }}>
-								<Button className='w-full'>
+								<Button className='w-full bg-blue-600 hover:bg-blue-700 text-white'>
 									Request Credit Increase <ArrowRight className='ml-2 h-4 w-4' />
 								</Button>
 							</Link>
