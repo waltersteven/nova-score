@@ -23,9 +23,9 @@ const creditCards = [
 		name: 'Cash Back Mastercard',
 		limit: 5000,
 		balance: 4000,
-		image: '/images/gold-card.jpg',
+		image: '/images/red-card.jpeg',
 	},
-	{ id: 3, name: 'Travel Visa', limit: 7500, balance: 3000, image: '/images/black-card.jpg' },
+	{ id: 3, name: 'Travel Visa', limit: 7500, balance: 3000, image: '/images/blue-card.jpeg' },
 ];
 
 export default function CreditLine() {
